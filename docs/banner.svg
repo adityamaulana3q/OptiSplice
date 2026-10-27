@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="t d">
+  <title id="t">OptiSplice Lab</title>
+  <desc id="d">Banner OptiSplice Lab: simulator fusion splicing fiber optik. Dua kabel bertemu di tengah dan busur listrik melebur serat di dalam sleeve.</desc>
+  <defs>
+    <clipPath id="r"><rect width="1280" height="360" rx="22"/></clipPath>
+    <pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".10"/></pattern>
+    <pattern id="g5" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M200 0H0V200" fill="none" stroke="#fff" stroke-opacity=".22"/></pattern>
+    <pattern id="rl" width="40" height="16" patternUnits="userSpaceOnUse"><path d="M0 16V0M10 16V10M20 16V6M30 16V10" stroke="#fff" stroke-opacity=".55"/></pattern>
+    <radialGradient id="wg"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#B9E9FF" stop-opacity=".8"/><stop offset="1" stop-color="#B9E9FF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vg" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></radialGradient>
+    <g id="cab">
+      <rect x="-20" y="282" width="760" height="36" rx="5" fill="#181612"/>
+      <rect x="-20" y="285" width="760" height="6" rx="3" fill="#fff" fill-opacity=".28"/>
+      <rect x="728" y="282" width="12" height="36" rx="3" fill="#35322c"/>
+      <rect x="740" y="294" width="80" height="12" rx="5" fill="#051a75"/>
+      <rect x="820" y="297.5" width="80" height="5" rx="2.5" fill="#f6f9fa" stroke="#b5e2f1" stroke-width=".6"/>
+    </g>
+    <style>
+      .glow{animation:pulse 2.6s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+      @media (prefers-reduced-motion:reduce){.glow{animation:none;opacity:.8}}
+    </style>
+  </defs>
+  <g clip-path="url(#r)">
+    <rect width="1280" height="360" fill="#2C5A4D"/>
+    <rect width="1280" height="360" fill="url(#g1)"/><rect width="1280" height="360" fill="url(#g5)"/>
+    <rect y="344" width="1280" height="16" fill="url(#rl)"/>
+    <use href="#cab"/>
+    <g transform="translate(1800 0) scale(-1 1)"><use href="#cab"/></g>
+    <circle class="glow" cx="900" cy="300" r="74" fill="url(#wg)"/>
+    <rect x="770" y="279" width="260" height="42" rx="12" fill="#DEF2FC" fill-opacity=".72" stroke="#fff" stroke-opacity=".8" stroke-width="1.2"/>
+    <rect x="800" y="283" width="200" height="4" rx="2" fill="#B9C0C6"/>
+    <circle cx="900" cy="300" r="3.4" fill="#EAFBFF"/>
+    <g transform="translate(64 78) scale(.4)">
+      <rect width="264" height="264" rx="75" fill="#12212B"/>
+      <g fill="none" stroke-linecap="round"><path d="M35 153H106.5M156.5 110H228" stroke="#E8F1F5" stroke-width="19.5"/><path d="M106.5 153C124 153 134 110 156.5 110" stroke="#F2C230" stroke-width="21.5"/></g>
+      <path d="M189 48 196 67 215 74 196 81 189 100 182 81 163 74 182 67Z" fill="#F2C230"/>
+    </g>
+    <g font-family="'Bricolage Grotesque','Segoe UI','Helvetica Neue',Arial,sans-serif">
+      <text x="198" y="134" font-size="64" font-weight="700" fill="#fff" letter-spacing="-1.5">OptiSplice <tspan font-weight="400" fill="#C9D3CD">Lab</tspan></text>
+      <text x="200" y="168" font-size="15" letter-spacing="5.5" fill="#D5E3DC">SIMULATOR FUSION SPLICING</text>
+      <text x="64" y="236" font-size="25" fill="#fff" fill-opacity=".92">Praktik menyambung serat optik langsung di browser.</text>
+    </g>
+    <rect width="1280" height="360" fill="url(#vg)"/>
+  </g>
+  <rect x="1.5" y="1.5" width="1277" height="357" rx="21" fill="none" stroke="#10201A" stroke-width="3"/>
+</svg>
