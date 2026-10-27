@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 264" role="img" aria-label="OptiSplice Lab">
+  <rect width="264" height="264" rx="75" fill="#12212B"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M35 153H106.5M156.5 110H228" stroke="#E8F1F5" stroke-width="19.5"/>
+    <path d="M106.5 153C124 153 134 110 156.5 110" stroke="#F2C230" stroke-width="21.5"/>
+  </g>
+  <path d="M189 48 196 67 215 74 196 81 189 100 182 81 163 74 182 67Z" fill="#F2C230"/>
+</svg>

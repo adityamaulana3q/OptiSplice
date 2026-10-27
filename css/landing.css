@@ -1,0 +1,149 @@
+/* landing.css — halaman awal (index.html). Token warna, font, dan tombol ada di base.css. */
+:root{
+  --bench:#2C5A4D; --bench-deep:#10201A;
+  --mat:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px) 0 0/40px 40px,var(--bench);
+}
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px;font-weight:600}
+.skip:focus{top:12px}
+a.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.btn.lg{padding:16px 24px;font-size:16px;border-radius:12px}
+
+/* ---------- navigasi ---------- */
+.nav-wrap{position:sticky;top:0;z-index:30;padding:12px clamp(12px,2vw,24px)}
+.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:16px;background:#b3e1c4;color:#14212B;border:1.5px solid rgba(20,33,43,.12);border-radius:18px;padding:8px 10px 8px 16px;box-shadow:0 10px 28px -14px rgba(0,0,0,.45)}
+.logo{display:block;line-height:0}
+.logo img{height:46px;width:auto}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0 auto 0 14px;padding:0}
+.nav ul a{display:block;padding:9px 13px;border-radius:9px;color:inherit;text-decoration:none;font-weight:500}
+.nav ul a:hover{background:#EEF1F2}
+
+/* ---------- hero ---------- */
+.hero{max-width:1240px;margin:0 auto;padding:clamp(24px,5vw,64px) clamp(12px,2vw,24px) 36px;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(38px,5.6vw,70px);line-height:1;letter-spacing:-.035em;margin-bottom:18px}
+.lead{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:46ch;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.note{margin:14px 0 0;font-size:14px;color:var(--muted)}
+.hero-bench{position:relative;margin:0 0 34px}
+.bench{position:relative;overflow:hidden;border-radius:22px;border:3px solid var(--bench-deep);box-shadow:0 0 0 1.5px var(--line),0 26px 44px -24px rgba(0,0,0,.6)}
+.bench::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 80px rgba(0,0,0,.45),inset 0 2px 0 rgba(255,255,255,.1)}
+.bench svg{display:block;width:100%;height:auto}
+
+/* keadaan akhir (dipakai bila animasi dimatikan) */
+.flash{opacity:0;transform-box:fill-box;transform-origin:center}
+.hsleeve rect{transform-box:view-box;transform-origin:400px 140px;transform:scaleY(.62)}
+.hsleeve .shell{fill:rgba(222,242,252,.72);stroke:rgba(255,255,255,.8);stroke-width:1.2}
+.dim{opacity:0}
+
+/* satu adegan: kabel bertemu, busur, sleeve, hasil ukur */
+@media (prefers-reduced-motion:no-preference){
+  .scene{animation:scene 9s ease-in-out infinite}
+  .hl,.hr{animation:join 9s ease-in-out infinite}
+  .flash{animation:arc 9s ease-out infinite}
+  .weld{animation:weld 9s linear infinite}
+  .hsleeve{animation:sleeveIn 9s ease-out infinite}
+  .hsleeve rect{animation:shrink 9s ease-in-out infinite}
+  .dim{animation:dim 9s linear infinite}
+  .lcd .a{animation:lcdA 9s linear infinite}
+  .lcd .b{animation:lcdB 9s linear infinite}
+}
+@keyframes scene{0%{opacity:0}5%,93%{opacity:1}100%{opacity:0}}
+@keyframes join{0%,8%{transform:translateX(-56px)}40%,100%{transform:none}}
+@keyframes arc{0%,40%{opacity:0;transform:scale(.2)}44%{opacity:1;transform:scale(1)}49%{opacity:.3}53%{opacity:1}58%{opacity:.35}64%{opacity:.9}72%,100%{opacity:0;transform:scale(1.7)}}
+@keyframes weld{0%,41%{opacity:0}42%,100%{opacity:1}}
+@keyframes sleeveIn{15%,56%{opacity:0;transform:translateX(-80px)}66%,100%{opacity:1;transform:none}}
+@keyframes shrink{0%,76%{transform:scaleY(1)}88%,100%{transform:scaleY(.71)}}
+@keyframes dim{0%,8%{opacity:0}14%,32%{opacity:1}42%,100%{opacity:0}}
+@keyframes lcdA{0%,87%{opacity:1}87.1%,100%{opacity:0}}
+@keyframes lcdB{0%,87%{opacity:0}87.1%,100%{opacity:1}}
+
+.lcd{position:absolute;right:18px;bottom:-34px;width:min(270px,62%);display:grid;padding:12px 14px;border-radius:16px;color:#8CFFC0;border:1.5px solid #040D0A;background:repeating-linear-gradient(0deg,rgba(140,255,192,.06) 0 1px,transparent 1px 3px),radial-gradient(120% 100% at 50% 0%,#12382E,#0A1C17);box-shadow:inset 0 0 26px rgba(0,0,0,.65),0 14px 26px -12px rgba(0,0,0,.65)}
+.lcd .lab{font-size:12px;opacity:.75}
+.lcd .val{display:flex;align-items:baseline;gap:6px;font:400 44px/1.1 "Share Tech Mono",ui-monospace,monospace;text-shadow:0 0 14px rgba(140,255,192,.6)}
+.lcd small{font-size:16px;opacity:.8}
+.lcd .st{display:grid}
+.lcd .st i,.lcd .q i{grid-area:1/1;font-style:normal}
+.lcd .q{display:grid;font-size:13px;min-height:1.4em}
+.lcd .a{opacity:0}
+
+/* ---------- bagian umum ---------- */
+.sec{max-width:1240px;margin:0 auto;padding:clamp(44px,7vw,92px) clamp(12px,2vw,24px) 0}
+.sec-head h2{font-size:clamp(28px,3.6vw,46px);line-height:1.05;letter-spacing:-.025em;margin-bottom:10px}
+.sec-head p{color:var(--muted);font-size:17px;max-width:58ch;margin:0 0 28px}
+
+/* ---------- alat: papan kerja ---------- */
+.board{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:208px 208px 168px;gap:clamp(10px,1.6vw,18px);padding:clamp(14px,2.4vw,26px);border-radius:24px;border:3px solid var(--bench-deep);background:var(--mat);box-shadow:inset 0 0 90px rgba(0,0,0,.45),0 26px 44px -26px rgba(0,0,0,.6)}
+.t{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;min-height:0}
+.t img{flex:1;min-height:0;width:100%;object-fit:contain;filter:drop-shadow(0 12px 12px rgba(0,0,0,.4))}
+.t figcaption{display:flex;align-items:center;gap:9px;align-self:flex-start;background:#F7F8F5;color:#5B6862;border-radius:10px;padding:6px 11px 6px 7px;font-size:13px;line-height:1.2}
+.t figcaption b{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--yellow);border:1.5px solid #1B2320;color:#1B2320;font:700 13px "Bricolage Grotesque",sans-serif}
+.t figcaption strong{display:block;color:#1B2320;font-size:14px}
+.splicer{grid-area:1/1/3/6}.otdr{grid-area:1/6/3/9}.heater{grid-area:1/9/2/13}.cleaver{grid-area:2/9/3/13}
+.gloves{grid-area:3/1/4/3}.stripper{grid-area:3/3/4/5}.miller{grid-area:3/5/4/7}.tissue{grid-area:3/7/4/9}.sleeve{grid-area:3/9/4/13}
+
+/* ---------- langkah ---------- */
+.steps{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);column-gap:clamp(24px,5vw,72px);align-items:start}
+.steps .sec-head{position:sticky;top:96px}
+.rail{list-style:none;margin:0;padding:0}
+.rail li{position:relative;display:grid;grid-template-columns:44px 1fr;gap:16px;padding-bottom:24px}
+.rail li::before{content:"";position:absolute;left:21px;top:46px;bottom:2px;width:2px;background:var(--line)}
+.rail li:last-child::before{display:none}
+.rail b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--yellow);color:#1B2320;border:2px solid #1B2320;font:700 18px "Bricolage Grotesque",sans-serif}
+.rail li:last-child b{background:var(--ok);border-color:var(--ok);color:#fff}
+.rail h3{font-size:20px;margin:7px 0 2px}
+.rail p{margin:0;color:var(--muted)}
+
+/* ---------- mode dan nilai ---------- */
+.nilai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(16px,3vw,32px);align-items:start}
+.modes{display:grid;gap:14px}
+.mode{padding:16px 18px;background:var(--card-bg);border:1.5px solid var(--line);border-left:8px solid var(--yellow);border-radius:16px;box-shadow:var(--shadow)}
+.mode.ujian{border-left-color:var(--ink)}
+.mode h3{font-size:21px;margin-bottom:4px}
+.mode p{margin:0;color:var(--muted)}
+.grades{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0}
+.grades span{padding:6px 12px 6px 7px;border:1.5px solid var(--line);border-radius:999px;background:var(--panel);font-size:14px;color:var(--muted)}
+.grades b{display:inline-grid;place-items:center;width:22px;height:22px;margin-right:6px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:12px}
+.ticket{padding:20px;background:var(--card-bg);border:1.5px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.t-top{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-bottom:12px}
+.score{padding:12px 18px;border-radius:16px;background:#1B2320;text-align:center}
+.score b{display:block;font:700 56px/1 "Bricolage Grotesque",sans-serif;color:var(--yellow)}
+.score span{font-size:12.5px;color:rgba(255,255,255,.75)}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0;font-size:14px}
+.ticket dt{color:var(--muted)}
+.ticket dd{margin:0;font-weight:600}
+.row{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font-size:14px}
+.bar{height:8px;margin-top:4px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+.code{margin:14px 0 0;font:400 13px "Share Tech Mono",ui-monospace,monospace;color:var(--muted)}
+
+/* ---------- ajakan akhir & footer ---------- */
+.final{max-width:1240px;margin:clamp(48px,8vw,96px) auto 0;padding:0 clamp(12px,2vw,24px)}
+.final-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:clamp(28px,5vw,56px);border-radius:26px;border:3px solid var(--bench-deep);color:#fff;background:radial-gradient(circle at 88% 50%,rgba(185,233,255,.4),transparent 34%),var(--mat);box-shadow:inset 0 0 90px rgba(0,0,0,.45)}
+.final h2{font-size:clamp(26px,3.4vw,42px);letter-spacing:-.02em;max-width:18ch}
+.foot{margin-top:clamp(48px,8vw,96px);background:var(--bench-deep);color:#C9D3CD}
+.foot-in{max-width:1240px;margin:0 auto;padding:28px clamp(12px,2vw,24px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px}
+.foot .brand{display:flex;align-items:center;gap:12px}
+.foot .brand img{border-radius:10px}
+.foot strong{display:block;color:#fff;font:700 18px "Bricolage Grotesque",sans-serif}
+.foot small{font-size:13px;color:#9FB0A7}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+.foot nav a{color:#E7ECE8;text-decoration:none}
+.foot nav a:hover{text-decoration:underline}
+
+/* ---------- responsif ---------- */
+@media (max-width:900px){
+  .hero,.steps,.nilai{grid-template-columns:1fr}
+  .steps .sec-head{position:static}
+}
+@media (max-width:760px){
+  .nav ul{display:none}
+  .nav .btn{margin-left:auto}
+  .logo img{height:40px}
+  .board{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:190px}
+  .t{grid-area:auto}
+  .splicer{grid-column:span 2;grid-row:span 2}
+}
+@media (max-width:520px){
+  .hero-bench{margin-bottom:0}
+  .lcd{position:relative;right:auto;bottom:auto;width:auto;margin:-22px 14px 0}
+  .t-top{grid-template-columns:1fr}
+}

@@ -1,0 +1,63 @@
+/* base.css — token warna, reset, tipografi, dan tombol. Dipakai index.html (beranda) dan simulasi.html. */
+:root{
+  --bg:#ECEFEA; --panel:#F7F8F5; --ink:#1B2320; --muted:#5B6862; --line:#CDD4CE;
+  --yellow:#F2C230; --on-yellow:#1B2320; --ok:#1E7F55; --err:#B93A2B; --focus:#2456D6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101513; --panel:#17201C; --ink:#E7ECE8; --muted:#95A29B; --line:#2B3831;
+    --focus:#7FA2FF; --ok:#4CC28A; --err:#FF7B69;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101513; --panel:#17201C; --ink:#E7ECE8; --muted:#95A29B; --line:#2B3831;
+  --focus:#7FA2FF; --ok:#4CC28A; --err:#FF7B69;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;margin:0}
+.btn{appearance:none;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font:600 14px/1 "Instrument Sans",system-ui,sans-serif;padding:11px 16px;border-radius:8px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn:hover:not(:disabled){filter:brightness(1.12)}
+/* ===== TEMA VISUAL BARU ===== */
+:root{
+  --shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 22px -10px rgba(20,40,32,.3);
+  --card-bg:linear-gradient(180deg,#FCFDFB,#F1F4EF);
+  --page-glow:rgba(242,194,48,.18);
+  --grid-line:rgba(27,35,32,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --shadow:0 1px 0 rgba(255,255,255,.05) inset,0 12px 28px -12px rgba(0,0,0,.65);
+    --card-bg:linear-gradient(180deg,#1C2822,#151E1A);
+    --page-glow:rgba(242,194,48,.09);
+    --grid-line:rgba(255,255,255,.035);
+  }
+}
+:root[data-theme="dark"]{
+  --shadow:0 1px 0 rgba(255,255,255,.05) inset,0 12px 28px -12px rgba(0,0,0,.65);
+  --card-bg:linear-gradient(180deg,#1C2822,#151E1A);
+  --page-glow:rgba(242,194,48,.09);
+  --grid-line:rgba(255,255,255,.035);
+}
+body{
+  background:
+    radial-gradient(900px 420px at 12% -8%,var(--page-glow),transparent 60%),
+    radial-gradient(800px 420px at 100% 0%,rgba(92,200,224,.12),transparent 60%),
+    linear-gradient(var(--grid-line) 1px,transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px) 0 0/32px 32px,
+    var(--bg);
+  background-attachment:fixed;
+}
+/* tombol */
+.btn{border-radius:10px;background:var(--yellow);border-color:#1B2320;color:#1B2320;box-shadow:0 3px 0 rgba(0,0,0,.4);transition:transform .08s,box-shadow .08s,filter .15s}
+.btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 0 0 rgba(0,0,0,.4)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink);box-shadow:none}
+.btn.alt:active:not(:disabled){transform:none}

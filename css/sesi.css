@@ -1,0 +1,41 @@
+/* sesi.css — gaya identitas siswa, timer, dialog hasil, mode ujian. (sebelumnya disuntik lewat JS) */
+.top>div:last-child{align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.who{font-size:13px;color:var(--muted);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.timer{font:400 22px/1 "Share Tech Mono",ui-monospace,monospace;background:#0D2620;color:#8CFFC0;padding:9px 13px;border-radius:10px;border:1.5px solid #040D0A;text-shadow:0 0 10px rgba(140,255,192,.5)}
+.fld{display:grid;gap:5px;margin:12px 0}
+.fld span{font-weight:600;font-size:14px}
+.fld input{font:inherit;font-size:16px;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.fld input:focus-visible{border-color:var(--focus)}
+.dlg .fld-err{color:var(--err);min-height:1.4em;margin:0;font-weight:600;font-size:14px}
+#resultDlg{width:min(640px,94vw)}
+.res-top{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin:10px 0 14px}
+.res-score{background:#1B2320;border-radius:16px;padding:14px 20px;text-align:center}
+.res-score b{display:block;font:700 56px/1 "Bricolage Grotesque",sans-serif;color:var(--yellow)}
+.res-score span{font-size:13px;color:rgba(255,255,255,.75)}
+.res-id{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0;font-size:14px}
+.res-id dt{color:var(--muted)}
+.res-id dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+#resBody h3{font-size:16px;margin:14px 0 6px}
+.res-row{display:flex;justify-content:space-between;gap:8px;font-size:14px;margin-top:6px}
+.res-bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:3px}
+.res-bar i{display:block;height:100%;background:var(--ok)}
+.res-steps{margin:0;padding:0;list-style:none;display:grid;gap:4px;font-size:14px}
+.res-steps li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding:3px 0}
+.res-steps li::before{content:"✓";color:var(--ok);font-weight:700}
+.res-steps li span{flex:1}
+.res-steps em{font:400 13px "Share Tech Mono",monospace;color:var(--muted)}
+.dlg p.res-code{font:400 13px "Share Tech Mono",monospace;color:var(--muted);margin:10px 0 0}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;border:0;padding:0}
+.modes legend{font-weight:600;font-size:14px;padding:0;margin-bottom:5px}
+.mode{position:relative;display:grid;gap:2px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;background:var(--bg)}
+.mode input{position:absolute;opacity:0;pointer-events:none}
+.mode b{font-size:15px}
+.mode small{color:var(--muted);font-size:12.5px;line-height:1.3}
+.mode:has(input:checked){border-color:#1B2320;background:var(--yellow);box-shadow:0 0 0 3px rgba(242,194,48,.35)}
+.mode:has(input:checked) b,.mode:has(input:checked) small{color:#1B2320}
+.mode:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:2px}
+.exam-mode .instr:not(.finished),.exam-mode .readout,.exam-mode .rail,.exam-mode .chip,.exam-mode .dim,.exam-mode .toast,.exam-mode #slideTarget text,.exam-mode #splicerDlg p,.exam-mode #heaterDlg p{display:none!important}
+.exam-mode .instr>:not(:last-child){display:none}
+.exam-mode .instr{grid-template-columns:1fr}
+.exam-mode .instr>:last-child{justify-self:end}
+@media (max-width:700px){.instr>div:last-child{grid-column:1/-1}.res-top{grid-template-columns:1fr}.modes{grid-template-columns:1fr}}

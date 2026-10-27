@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Latihan fusion splicing fiber optik langsung di browser: seret alat, kupas, potong, sambung, panaskan, lalu ukur redaman. Lengkap dengan nilai dan bukti JPG.">
+<title>OptiSplice Lab — Simulator fusion splicing fiber optik</title>
+<link rel="icon" type="image/svg+xml" href="img/logo/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+<a class="skip" href="#utama">Lewati ke konten</a>
+
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Utama">
+    <a class="logo" href="index.html"><img src="img/logo/logo-optisplice.png" width="1108" height="291" alt="OptiSplice Lab, simulator fusion splicing"></a>
+    <ul>
+      <li><a href="#alat">Alat</a></li>
+      <li><a href="#langkah">Langkah</a></li>
+      <li><a href="#nilai">Mode dan nilai</a></li>
+    </ul>
+    <a class="btn" href="simulasi.html">Mulai simulasi</a>
+  </nav>
+</header>
+
+<main id="utama">
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Praktik fusion splicing, langsung di browser.</h1>
+      <p class="lead">Pakai sarung tangan, kupas, bersihkan, potong, sambung, panaskan, lalu ukur redamannya. Sembilan langkah seperti di laboratorium, tidak ada serat dan sleeve yang terbuang.</p>
+      <div class="cta">
+        <a class="btn lg" href="simulasi.html">Mulai simulasi</a>
+        <a class="btn alt lg" href="#langkah">Lihat sembilan langkah</a>
+      </div>
+    </div>
+
+    <figure class="hero-bench">
+      <div class="bench">
+        <svg viewBox="115 48 570 252" role="img" aria-label="Animasi: dua kabel bertemu, busur listrik melebur serat, sleeve menyusut, redaman terukur 0,03 dB">
+          <defs>
+            <pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".10"/></pattern>
+            <pattern id="g5" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M200 0H0V200" fill="none" stroke="#fff" stroke-opacity=".22"/></pattern>
+            <pattern id="rl" width="40" height="16" patternUnits="userSpaceOnUse"><path d="M0 16V0M10 16V10M20 16V6M30 16V10" stroke="#fff" stroke-opacity=".55"/></pattern>
+            <radialGradient id="wg"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#B9E9FF" stop-opacity=".8"/><stop offset="1" stop-color="#B9E9FF" stop-opacity="0"/></radialGradient>
+            <g id="cab">
+              <rect x="-20" y="122" width="280" height="36" rx="5" fill="#181612"/>
+              <rect x="-20" y="125" width="280" height="6" rx="3" fill="#fff" fill-opacity=".28"/>
+              <rect x="248" y="122" width="12" height="36" rx="3" fill="#35322c"/>
+              <rect x="260" y="134" width="60" height="12" rx="5" fill="#051a75"/>
+              <rect x="320" y="137.5" width="80" height="5" rx="2.5" fill="#f6f9fa" stroke="#b5e2f1" stroke-width=".6"/>
+            </g>
+          </defs>
+          <rect width="800" height="300" fill="#2C5A4D"/>
+          <rect width="800" height="300" fill="url(#g1)"/><rect width="800" height="300" fill="url(#g5)"/>
+          <rect y="284" width="800" height="16" fill="url(#rl)"/>
+          <g class="scene">
+            <g class="dim"><path d="M320 98V106M400 98V106M320 102H400" stroke="#fff" stroke-opacity=".85" stroke-width="1.2"/><text x="360" y="90" text-anchor="middle" fill="#fff" font-size="12" font-weight="600" font-family="Instrument Sans,sans-serif">kaca 15 mm</text></g>
+            <g class="hl"><use href="#cab"/></g>
+            <g transform="translate(800 0) scale(-1 1)"><g class="hr"><use href="#cab"/></g></g>
+            <circle class="flash" cx="400" cy="140" r="34" fill="url(#wg)"/>
+            <circle class="weld" cx="400" cy="140" r="3.2" fill="#EAFBFF"/>
+            <g class="hsleeve"><rect class="shell" x="215" y="114" width="380" height="54" rx="12"/><rect x="260" y="119" width="290" height="5" rx="2" fill="#B9C0C6"/></g>
+          </g>
+        </svg>
+      </div>
+      <div class="lcd" aria-hidden="true">
+        <span class="lab">Redaman sambungan</span>
+        <span class="val"><span class="st"><i class="a">--.--</i><i class="b">0.03</i></span><small>dB</small></span>
+        <span class="q"><i class="a">Mengukur…</i><i class="b">Sangat baik (≤ 0,10 dB)</i></span>
+      </div>
+    </figure>
+  </section>
+
+  <section id="alat" class="sec">
+    <div class="sec-head">
+      <h2>Sembilan alat, semuanya bisa diseret</h2>
+      <p>Posisi alat di rak diacak setiap sesi. Kamu harus tahu alat mana untuk langkah mana. Angka kuning menunjukkan langkah pemakaiannya.</p>
+    </div>
+    <div class="board">
+      <figure class="t splicer"><img src="img/alat/fusionsplicing.png" width="500" height="500" alt="Fusion splicer" loading="lazy"><figcaption><b>7</b><span><strong>Fusion splicer</strong>Lebur dua serat</span></figcaption></figure>
+      <figure class="t otdr"><img src="img/alat/otdr.png" width="492" height="507" alt="OTDR atau tester" loading="lazy"><figcaption><b>9</b><span><strong>OTDR / tester</strong>Ukur redaman</span></figcaption></figure>
+      <figure class="t heater"><img src="img/alat/heater.png" width="500" height="500" alt="Heater sleeve" loading="lazy"><figcaption><b>8</b><span><strong>Heater</strong>Susutkan sleeve</span></figcaption></figure>
+      <figure class="t cleaver"><img src="img/alat/cleaver.png" width="525" height="475" alt="Fiber cleaver" loading="lazy"><figcaption><b>5</b><span><strong>Fiber cleaver</strong>Potong rata 0°</span></figcaption></figure>
+      <figure class="t gloves"><img src="img/alat/safety-gloves.png" width="500" height="500" alt="Sarung tangan" loading="lazy"><figcaption><b>1</b><span><strong>Sarung tangan</strong>Lindungi tangan</span></figcaption></figure>
+      <figure class="t stripper"><img src="img/alat/stripper.png" width="500" height="500" alt="Pengupas kabel" loading="lazy"><figcaption><b>2</b><span><strong>Pengupas kabel</strong>Kupas jaket luar</span></figcaption></figure>
+      <figure class="t miller"><img src="img/alat/stripperkuning.png" width="500" height="500" alt="Miller serat" loading="lazy"><figcaption><b>4</b><span><strong>Miller serat</strong>Buka kaca cladding</span></figcaption></figure>
+      <figure class="t tissue"><img src="img/alat/tissue.png" width="500" height="500" alt="Tisu alkohol" loading="lazy"><figcaption><b>3</b><span><strong>Tisu alkohol</strong>Angkat gel dan kotoran</span></figcaption></figure>
+      <figure class="t sleeve"><img src="img/alat/sleeve.png" width="500" height="500" alt="Sleeve pelindung" loading="lazy"><figcaption><b>6</b><span><strong>Sleeve pelindung</strong>Lindungi sambungan</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="langkah" class="sec steps">
+    <div class="sec-head">
+      <h2>Sembilan langkah, urutannya tetap</h2>
+      <p>Salah memilih alat dicatat sebagai kesalahan dan mengurangi nilaimu. Batas sambungan yang lulus adalah redaman 0,30 dB.</p>
+    </div>
+    <ol class="rail">
+      <li><b>1</b><div><h3>Pakai sarung tangan</h3><p>Melindungi tangan dari serpihan kaca dan menjaga serat tetap bersih.</p></div></li>
+      <li><b>2</b><div><h3>Kupas jaket luar kabel</h3><p>Seret pengupas ke ujung kabel kiri dan kanan. Jaket terkupas 3 cm.</p></div></li>
+      <li><b>3</b><div><h3>Bersihkan serat dengan alkohol</h3><p>Gosok tisu pada serat sampai gel dan kotoran hilang.</p></div></li>
+      <li><b>4</b><div><h3>Kupas coating serat</h3><p>Miller membuka cladding kaca sepanjang 15 mm.</p></div></li>
+      <li><b>5</b><div><h3>Potong dengan fiber cleaver</h3><p>Seret kedua kabel ke cleaver agar ujung serat rata, sudut potong mendekati 0°.</p></div></li>
+      <li><b>6</b><div><h3>Pasang sleeve pelindung</h3><p>Harus dipasang sebelum serat disambung.</p></div></li>
+      <li><b>7</b><div><h3>Jalankan fusion splicer</h3><p>Masukkan serat, tutup penutup, lalu mesin menyejajarkan inti dan melebur dengan busur listrik.</p></div></li>
+      <li><b>8</b><div><h3>Geser sleeve, lalu panaskan</h3><p>Seret sleeve tepat ke titik sambungan, lalu heater menyusutkannya.</p></div></li>
+      <li><b>9</b><div><h3>Ukur redaman sambungan</h3><p>OTDR mengirim pulsa dari kedua arah, lalu menampilkan redaman dalam dB.</p></div></li>
+    </ol>
+  </section>
+
+  <section id="nilai" class="sec">
+    <div class="sec-head">
+      <h2>Dua mode, satu nilai</h2>
+      <p>Pilih mode saat mulai. Nilai dihitung otomatis dan bisa diunduh sebagai bukti.</p>
+    </div>
+    <div class="nilai">
+      <div class="modes">
+        <div class="mode belajar"><h3>Mode belajar</h3><p>Langkah, petunjuk, dan catatan terus tampil di layar. Cocok untuk latihan pertama.</p></div>
+        <div class="mode ujian"><h3>Mode ujian</h3><p>Petunjuk disembunyikan. Yang tersisa hanya area kerja, timer, dan nilai. Cocok untuk penilaian.</p></div>
+        <p class="grades"><span><b>A</b> 90 ke atas</span><span><b>B</b> 80 ke atas</span><span><b>C</b> 70 ke atas</span><span><b>D</b> di bawah 70</span></p>
+      </div>
+      <div class="ticket" aria-label="Contoh hasil simulasi">
+        <div class="t-top">
+          <div class="score"><b>92</b><span>dari 100 · nilai A</span></div>
+          <dl><dt>Nama</dt><dd>Nama siswa</dd><dt>No. absen</dt><dd>7</dd><dt>Waktu</dt><dd>04:03</dd></dl>
+        </div>
+        <div class="row"><span>Prosedur lengkap, 9 dari 9 langkah</span><b>50 / 50</b></div><div class="bar"><i style="width:100%"></i></div>
+        <div class="row"><span>Ketepatan alat, berkurang 5 tiap salah</span><b>25 / 30</b></div><div class="bar"><i style="width:83%"></i></div>
+        <div class="row"><span>Kecepatan, penuh jika 3 menit atau kurang</span><b>17 / 20</b></div><div class="bar"><i style="width:85%"></i></div>
+        <p class="code">Contoh hasil. ID bukti unik dibuat di setiap unduhan JPG.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="final-in">
+      <h2>Siap menyambung serat pertamamu?</h2>
+      <a class="btn lg" href="simulasi.html">Mulai simulasi</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="brand"><img src="img/logo/logo-mark.svg" width="40" height="40" alt=""><span><strong>OptiSplice Lab</strong><small>Simulator fusion splicing</small></span></div>
+    <nav aria-label="Footer"><a href="#alat">Alat</a><a href="#langkah">Langkah</a><a href="#nilai">Mode dan nilai</a><a href="simulasi.html">Mulai simulasi</a></nav>
+    <small>© 2026 OptiSplice Lab</small>
+  </div>
+</footer>
+</body>
+</html>
