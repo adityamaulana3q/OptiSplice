@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Materi fiber optik dan fusion splicing: struktur serat, jenis, redaman, konektor, alat, prosedur penyambungan, troubleshooting, dan keselamatan kerja.">
+<title>Materi — OptiSplice Lab</title>
+<link rel="icon" type="image/svg+xml" href="img/logo/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/situs.css">
+<link rel="stylesheet" href="css/materi.css">
+</head>
+<body>
+<a class="skip" href="#utama">Lewati ke konten</a>
+
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Utama">
+    <a class="logo" href="index.html"><img src="img/logo/logo-optisplice.png" width="1108" height="291" alt="OptiSplice Lab, kembali ke beranda"></a>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="materi.html" aria-current="page">Materi</a></li>
+      <li><a href="index.html#alat">Alat</a></li>
+    </ul>
+    <a class="btn" href="simulasi.html">Mulai simulasi</a>
+  </nav>
+</header>
+
+<main id="utama">
+  <section class="m-hero">
+    <h1>Materi fiber optik dan fusion splicing</h1>
+    <p class="lead">Dua bagian: dasar fiber optik, lalu fusion splicing langkah demi langkah. Baca berurutan, atau lompat lewat daftar isi. Urutan prosedurnya sama dengan yang kamu kerjakan di simulasi.</p>
+    <div class="cta">
+      <a class="btn lg" href="#apa-itu-fiber">Mulai dari dasar</a>
+      <a class="btn alt lg" href="#fusion-splicing">Langsung ke fusion splicing</a>
+    </div>
+  </section>
+
+  <div class="m-wrap">
+    <aside class="toc">
+      <nav aria-label="Daftar isi">
+        <p>Bagian A. Dasar fiber optik</p>
+        <ol>
+          <li><a href="#apa-itu-fiber">Apa itu fiber optik</a></li>
+          <li><a href="#struktur-serat">Struktur serat</a></li>
+          <li><a href="#cahaya-merambat">Cahaya merambat</a></li>
+          <li><a href="#jenis-serat">Single-mode dan multi-mode</a></li>
+          <li><a href="#redaman">Redaman dan satuan dB</a></li>
+          <li><a href="#konektor">Konektor</a></li>
+        </ol>
+        <p>Bagian B. Fusion splicing</p>
+        <ol start="7">
+          <li><a href="#fusion-splicing">Apa itu fusion splicing</a></li>
+          <li><a href="#alat-bahan">Alat dan bahan</a></li>
+          <li><a href="#prosedur">Prosedur sembilan langkah</a></li>
+          <li><a href="#cara-kerja-splicer">Cara kerja splicer</a></li>
+          <li><a href="#troubleshooting">Sambungan bermasalah</a></li>
+          <li><a href="#keselamatan">Keselamatan kerja</a></li>
+          <li><a href="#istilah">Istilah penting</a></li>
+          <li><a href="#cek-pemahaman">Cek pemahaman</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <article class="m-body">
+
+      <header class="part"><h2>Bagian A. Dasar fiber optik</h2><p>Sebelum menyambung serat, kenali dulu apa yang kamu sambung.</p></header>
+
+      <section id="apa-itu-fiber" class="m-sec">
+        <h2><span class="no">1</span>Apa itu fiber optik</h2>
+        <p>Fiber optik adalah serat kaca (kadang plastik) setipis rambut yang memandu cahaya dari satu ujung ke ujung lain. Di pemancar, data diubah menjadi denyut cahaya dari laser atau LED. Di penerima, denyut itu diubah kembali menjadi sinyal listrik.</p>
+        <div class="duo">
+          <div><h3>Keunggulan</h3><ul>
+            <li>Kapasitas data sangat besar.</li>
+            <li>Redaman kecil, jadi bisa menjangkau puluhan kilometer tanpa penguat.</li>
+            <li>Kebal gangguan elektromagnetik dan petir.</li>
+            <li>Sulit disadap, ringan, dan kecil.</li>
+          </ul></div>
+          <div><h3>Keterbatasan</h3><ul>
+            <li>Kaca rapuh dan tidak boleh ditekuk tajam.</li>
+            <li>Penyambungan butuh alat presisi dan operator terlatih.</li>
+            <li>Tidak menghantarkan listrik, jadi perangkat jauh butuh catu daya sendiri.</li>
+            <li>Ujung serat yang aktif berbahaya bagi mata.</li>
+          </ul></div>
+        </div>
+        <p>Pemakaian umum: jaringan tulang punggung operator, FTTH (<em>fiber to the home</em>), pusat data, dan jaringan kampus atau gedung.</p>
+      </section>
+
+      <section id="struktur-serat" class="m-sec">
+        <h2><span class="no">2</span>Struktur serat dan kabel</h2>
+        <p>Dari tengah ke luar, sebuah kabel fiber optik tersusun atas lapisan berikut. Hanya <strong>core</strong> dan <strong>cladding</strong> yang berupa kaca dan ikut dilebur saat fusion splicing. Lapisan lain harus dikupas lebih dulu.</p>
+        <figure class="diagram">
+          <svg viewBox="0 0 520 240" role="img" aria-label="Penampang kabel fiber optik dari luar ke dalam: jaket, penguat aramid, buffer, coating, cladding, core">
+            <circle cx="130" cy="120" r="112" fill="#181612"/>
+            <circle cx="130" cy="120" r="90" fill="#D9A400"/>
+            <circle cx="130" cy="120" r="90" fill="none" stroke="#8a6a00" stroke-width="2" stroke-dasharray="2 6"/>
+            <circle cx="130" cy="120" r="72" fill="#F7F8F5"/>
+            <circle cx="130" cy="120" r="48" fill="#E8772E"/>
+            <circle cx="130" cy="120" r="31" fill="#BFE9F5"/>
+            <circle cx="130" cy="120" r="11" fill="#fff" stroke="#5CC8E0" stroke-width="2"/>
+            <g stroke="#fff" stroke-opacity=".8" stroke-width="1.2" fill="none">
+              <path d="M177 22 L250 28"/><path d="M190 58 L250 62"/><path d="M193 94 L250 96"/><path d="M174 120 L250 132"/><path d="M153 135 L250 168"/><path d="M137 129 L250 204"/>
+            </g>
+            <g fill="#fff" font-size="13.5" font-family="Instrument Sans,sans-serif">
+              <text x="258" y="32">Jaket luar (PVC / LSZH)</text><text x="258" y="66">Penguat aramid (kevlar)</text><text x="258" y="100">Buffer 900 µm</text>
+              <text x="258" y="136">Coating 250 µm</text><text x="258" y="172">Cladding 125 µm (kaca)</text><text x="258" y="208">Core 9 µm, single-mode (kaca)</text>
+            </g>
+          </svg>
+          <figcaption>Penampang kabel. Ukuran tidak sesuai skala.</figcaption>
+        </figure>
+        <p>Satu mikrometer (µm) adalah seperseribu milimeter. Kaca 125 µm kira-kira setebal rambut. Pada serat multi-mode, core berukuran 50 atau 62,5 µm.</p>
+        <p class="tip"><strong>Kaitan dengan simulasi:</strong> pengupas kabel membuka jaket, miller membuka coating, dan yang tersisa hanya kaca cladding yang siap dipotong lalu dilebur.</p>
+      </section>
+
+      <section id="cahaya-merambat" class="m-sec">
+        <h2><span class="no">3</span>Bagaimana cahaya merambat</h2>
+        <p>Core memiliki indeks bias sedikit lebih tinggi daripada cladding, selisihnya hanya sekitar 0,3 sampai 1 persen. Cahaya yang menumbuk batas core dan cladding dengan sudut lebih besar dari <em>sudut kritis</em> dipantulkan sempurna. Peristiwa ini disebut <strong>pemantulan dalam total</strong>. Cahaya terus memantul dan terkurung di dalam core.</p>
+        <figure class="diagram">
+          <svg viewBox="0 0 520 170" role="img" aria-label="Berkas cahaya memantul zig-zag di dalam core, dibatasi cladding di atas dan bawah">
+            <rect width="520" height="40" fill="#BFE9F5" fill-opacity=".35"/><rect y="130" width="520" height="40" fill="#BFE9F5" fill-opacity=".35"/>
+            <rect y="40" width="520" height="90" fill="#fff" fill-opacity=".12"/>
+            <path d="M0 85 L65 40 L195 130 L325 40 L455 130 L520 85" fill="none" stroke="#F2C230" stroke-width="3" stroke-linejoin="round"/>
+            <g fill="#fff" font-size="13.5" font-family="Instrument Sans,sans-serif"><text x="12" y="24">Cladding (indeks bias n₂)</text><text x="12" y="154">Cladding (n₂)</text><text x="12" y="120">Core (n₁ &gt; n₂)</text></g>
+          </svg>
+          <figcaption>Cahaya memantul di batas core dan cladding, lalu terus maju.</figcaption>
+        </figure>
+        <p class="tip"><strong>Mengapa sambungan harus presisi:</strong> cahaya hanya berjalan di core yang sangat kecil. Pada serat single-mode, pergeseran inti sebesar 1 µm saja sudah menambah redaman kira-kira 0,2 dB. Karena itu ujung serat harus rata dan intinya harus sejajar.</p>
+      </section>
+
+      <section id="jenis-serat" class="m-sec">
+        <h2><span class="no">4</span>Single-mode dan multi-mode</h2>
+        <div class="scroll"><table>
+          <thead><tr><th></th><th>Single-mode (SM)</th><th>Multi-mode (MM)</th></tr></thead>
+          <tbody>
+            <tr><th>Diameter core</th><td>sekitar 9 µm</td><td>50 µm (OM2 sampai OM5) atau 62,5 µm (OM1)</td></tr>
+            <tr><th>Diameter cladding</th><td>125 µm</td><td>125 µm</td></tr>
+            <tr><th>Panjang gelombang</th><td>1310 nm dan 1550 nm</td><td>850 nm dan 1300 nm</td></tr>
+            <tr><th>Sumber cahaya</th><td>Laser</td><td>LED atau VCSEL</td></tr>
+            <tr><th>Jangkauan</th><td>Puluhan sampai ratusan km</td><td>Sampai sekitar 300 sampai 400 m untuk 10 Gbps (OM3 dan OM4)</td></tr>
+            <tr><th>Warna jaket umum</th><td>Kuning</td><td>Oranye (OM1, OM2), aqua (OM3, OM4), hijau limau (OM5)</td></tr>
+            <tr><th>Pemakaian</th><td>Tulang punggung, antarkota, FTTH</td><td>Jaringan gedung, kampus, pusat data</td></tr>
+          </tbody>
+        </table></div>
+        <p>Serat single-mode mengikuti standar ITU-T G.652 (OS1 dan OS2). Varian G.657 tahan tikung dan banyak dipakai pada instalasi FTTH yang ruangnya sempit.</p>
+        <p class="tip"><strong>Jangan dicampur:</strong> menyambung SM dengan MM menimbulkan redaman besar karena core keduanya berbeda ukuran. Di simulasi, jenis serat yang dipilih menentukan program yang dipakai splicer.</p>
+      </section>
+
+      <section id="redaman" class="m-sec">
+        <h2><span class="no">5</span>Redaman dan satuan dB</h2>
+        <p><strong>Redaman</strong> adalah berkurangnya daya cahaya sepanjang perjalanan. Satuannya desibel (dB):</p>
+        <p class="rumus">Redaman (dB) = 10 × log₁₀ (P masuk ÷ P keluar)</p>
+        <p>Daya turun separuh berarti redaman sekitar 3 dB. Daya turun sepuluh kali berarti 10 dB. Karena skalanya logaritmik, redaman tiap bagian jaringan bisa langsung dijumlahkan.</p>
+        <h3>Penyebab redaman</h3>
+        <ul>
+          <li><strong>Serapan dan hamburan</strong> di dalam kaca. Besarnya tergantung panjang gelombang.</li>
+          <li><strong>Tikungan</strong> terlalu tajam, baik yang besar (<em>macrobend</em>) maupun lekukan mikro (<em>microbend</em>).</li>
+          <li><strong>Sambungan</strong> (splice) yang kurang sempurna.</li>
+          <li><strong>Konektor</strong> yang kotor atau kurang pas.</li>
+        </ul>
+        <h3>Nilai kasar per kilometer</h3>
+        <ul>
+          <li>Single-mode: sekitar 0,35 dB/km pada 1310 nm dan 0,20 sampai 0,25 dB/km pada 1550 nm.</li>
+          <li>Multi-mode: sekitar 3 dB/km pada 850 nm dan 1 dB/km pada 1300 nm.</li>
+        </ul>
+        <h3>Contoh anggaran redaman (<em>link budget</em>)</h3>
+        <p>Jumlahkan redaman kabel, semua sambungan, dan semua konektor. Hasilnya harus lebih kecil dari batas yang sanggup ditoleransi perangkat.</p>
+        <pre class="lcd" aria-label="Contoh perhitungan: kabel 10 km kali 0,25 dB per km sama dengan 2,50 dB; 4 sambungan kali 0,10 dB sama dengan 0,40 dB; 2 konektor kali 0,50 dB sama dengan 1,00 dB; total 3,90 dB">Kabel      10 km × 0,25 dB/km = 2,50 dB
+Sambungan  4 × 0,10 dB        = 0,40 dB
+Konektor   2 × 0,50 dB        = 1,00 dB
+------------------------------------------
+Total                           3,90 dB</pre>
+        <p class="tip"><strong>Target di simulasi:</strong> sambungan fusion yang baik berada di bawah 0,10 dB. Sambungan dengan redaman sampai 0,30 dB masih dinyatakan lulus. Lebih dari itu, ulangi sambungan.</p>
+      </section>
+
+      <section id="konektor" class="m-sec">
+        <h2><span class="no">6</span>Konektor</h2>
+        <p>Konektor memudahkan serat dipasang dan dilepas pada perangkat. Empat jenis yang paling sering kamu temui:</p>
+        <div class="scroll"><table>
+          <thead><tr><th>Jenis</th><th>Ciri</th><th>Biasa dipakai pada</th></tr></thead>
+          <tbody>
+            <tr><th>SC</th><td>Persegi, dorong-tarik</td><td>FTTH, ODF, perangkat jaringan</td></tr>
+            <tr><th>LC</th><td>Kecil, setengah ukuran SC</td><td>Modul SFP, perangkat padat</td></tr>
+            <tr><th>FC</th><td>Bulat, berulir logam</td><td>Alat ukur dan laboratorium</td></tr>
+            <tr><th>ST</th><td>Bulat, kunci bayonet</td><td>Jaringan multi-mode lama</td></tr>
+          </tbody>
+        </table></div>
+        <p>Permukaan ujung konektor dipoles dengan dua cara. <strong>UPC</strong> (biasanya berwarna biru) berujung bulat halus. <strong>APC</strong> (biasanya hijau) berujung miring 8° sehingga pantulan cahaya balik sangat kecil.</p>
+        <p class="tip"><strong>Jangan dicampur:</strong> menyambung konektor APC dengan UPC menghasilkan redaman tinggi dan bisa merusak permukaan ujung. Bersihkan ujung konektor sebelum dipasang.</p>
+      </section>
+
+      <header class="part"><h2>Bagian B. Fusion splicing</h2><p>Menyambung dua serat secara permanen dengan melebur kacanya.</p></header>
+
+      <section id="fusion-splicing" class="m-sec">
+        <h2><span class="no">7</span>Apa itu fusion splicing</h2>
+        <p><strong>Fusion splicing</strong> adalah menyambung dua serat dengan memanaskan ujung kacanya memakai busur listrik sampai meleleh dan menyatu, seolah-olah menjadi satu serat. Alatnya disebut <em>fusion splicer</em>.</p>
+        <div class="scroll"><table>
+          <thead><tr><th></th><th>Fusion splice</th><th>Mechanical splice</th></tr></thead>
+          <tbody>
+            <tr><th>Cara</th><td>Kaca dilebur dengan busur listrik</td><td>Dua serat dijepit sejajar dalam gel pencocok indeks</td></tr>
+            <tr><th>Redaman khas</th><td>sekitar 0,02 sampai 0,1 dB</td><td>sekitar 0,1 sampai 0,5 dB</td></tr>
+            <tr><th>Pantulan balik</th><td>Sangat rendah</td><td>Lebih tinggi</td></tr>
+            <tr><th>Kekuatan dan umur</th><td>Kuat dan permanen</td><td>Lebih lemah</td></tr>
+            <tr><th>Biaya alat</th><td>Mahal</td><td>Murah</td></tr>
+            <tr><th>Cocok untuk</th><td>Tulang punggung, FTTH, pekerjaan banyak sambungan</td><td>Perbaikan cepat atau pekerjaan sedikit sambungan</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="alat-bahan" class="m-sec">
+        <h2><span class="no">8</span>Alat dan bahan</h2>
+        <p>Sembilan alat inilah yang ada di rak simulasi. Di lapangan, tambahkan kacamata pelindung dan wadah tertutup untuk potongan serat.</p>
+        <ul class="alat">
+          <li><strong>Sarung tangan.</strong> Melindungi tangan dari serpihan kaca dan menjaga serat tetap bersih.</li>
+          <li><strong>Pengupas kabel.</strong> Membuka jaket luar dan memotong penguat aramid.</li>
+          <li><strong>Tisu dan alkohol isopropil (IPA).</strong> Membersihkan gel dan kotoran. Pakai tisu bebas serabut.</li>
+          <li><strong>Miller serat.</strong> Mengupas lapisan coating 250 µm tanpa menggores kaca.</li>
+          <li><strong>Fiber cleaver.</strong> Menggores lalu mematahkan kaca sehingga ujungnya rata dan tegak lurus.</li>
+          <li><strong>Sleeve pelindung.</strong> Selongsong yang menyusut karena panas, berisi batang penguat, untuk melindungi sambungan.</li>
+          <li><strong>Fusion splicer.</strong> Menyejajarkan dan melebur dua serat.</li>
+          <li><strong>Heater.</strong> Memanaskan sleeve sampai menyusut. Biasanya sudah menyatu di dalam splicer.</li>
+          <li><strong>OTDR atau power meter.</strong> Mengukur redaman sambungan.</li>
+        </ul>
+      </section>
+
+      <section id="prosedur" class="m-sec">
+        <h2><span class="no">9</span>Prosedur sembilan langkah</h2>
+        <p>Urutan ini sama dengan simulasi. Panjang kupasan di simulasi dibuat pendek agar mudah dilihat. Di lapangan, ikuti petunjuk alat dan kabel yang kamu pakai.</p>
+        <ol class="rail">
+          <li><b>1</b><div><h3>Pakai sarung tangan</h3><p>Pakai juga kacamata pelindung. Serpihan serat sangat kecil, tajam, dan sulit terlihat. Kerjakan di meja yang bersih dan rapi.</p></div></li>
+          <li><b>2</b><div><h3>Kupas jaket luar kabel</h3><p>Di simulasi jaket terkupas 3 cm. Di lapangan, kabel yang masuk ke closure atau tray bisa dikupas jauh lebih panjang. Potong penguat aramid, lalu buka buffer sampai serat berlapis coating terlihat.</p></div></li>
+          <li><b>3</b><div><h3>Bersihkan serat dengan alkohol</h3><p>Usap dari arah kabel ke ujung serat dengan tisu yang dibasahi IPA. Gel pengisi kabel harus bersih sebelum dikupas lebih lanjut.</p></div></li>
+          <li><b>4</b><div><h3>Kupas coating dengan miller</h3><p>Tarik miller lurus, jangan memutar. Di simulasi kaca terbuka 15 mm. Di lapangan, umumnya dikupas 30 sampai 40 mm lalu dipotong hingga sekitar 10 sampai 16 mm. Setelah ini jangan menyentuh kaca telanjang.</p></div></li>
+          <li><b>5</b><div><h3>Potong dengan fiber cleaver</h3><p>Hasil yang baik adalah permukaan rata seperti cermin dengan sudut potong mendekati 0°. Potongan miring, bergerigi, atau retak akan menambah redaman. Buang potongan ke wadah tertutup, jangan ke lantai.</p></div></li>
+          <li><b>6</b><div><h3>Pasang sleeve pelindung</h3><p>Masukkan sleeve ke salah satu serat sebelum menyambung. Setelah dilebur, sleeve tidak bisa dipasang lagi tanpa memotong sambungan.</p></div></li>
+          <li><b>7</b><div><h3>Jalankan fusion splicer</h3><p>Letakkan serat di V-groove, tutup penjepit dan penutup, pilih program sesuai jenis serat, lalu mulai. Splicer memeriksa ujung serat, menyejajarkan inti, dan melebur dengan busur listrik.</p></div></li>
+          <li><b>8</b><div><h3>Geser sleeve, lalu panaskan</h3><p>Geser sleeve sampai sambungan tepat di tengahnya, masukkan ke heater, dan tunggu kira-kira 30 sampai 60 detik sampai menyusut dan dingin.</p></div></li>
+          <li><b>9</b><div><h3>Ukur redaman sambungan</h3><p>Ukur dengan OTDR, idealnya dari dua arah lalu dirata-ratakan, atau dengan sumber cahaya dan power meter. Banyak proyek menetapkan batas 0,1 sampai 0,3 dB. Simulasi memakai batas 0,30 dB.</p></div></li>
+        </ol>
+      </section>
+
+      <section id="cara-kerja-splicer" class="m-sec">
+        <h2><span class="no">10</span>Cara kerja fusion splicer</h2>
+        <p>Setelah tombol mulai ditekan, mesin bekerja otomatis dalam beberapa tahap:</p>
+        <ol class="tahap">
+          <li><strong>Periksa ujung serat.</strong> Kamera memeriksa kebersihan dan sudut potong. Jika di luar batas, splicer memberi peringatan.</li>
+          <li><strong>Sejajarkan.</strong> Pada <em>cladding alignment</em>, V-groove menyejajarkan sisi luar kaca. Pada <em>core alignment</em>, motor menyejajarkan inti secara aktif lewat citra kamera. Cara kedua lebih akurat.</li>
+          <li><strong>Pre-fusion.</strong> Busur singkat membakar debu halus dan melunakkan ujung kaca.</li>
+          <li><strong>Fusion.</strong> Kedua ujung saling didorong (<em>overlap</em>) sambil busur menyala, sehingga kaca menyatu.</li>
+          <li><strong>Estimasi redaman.</strong> Mesin menghitung perkiraan redaman dari citra sambungan.</li>
+        </ol>
+        <p>Parameter utama adalah daya busur, lama busur, jarak awal (<em>gap</em>), dan <em>overlap</em>. Elektroda yang kotor atau aus membuat busur tidak stabil, jadi perlu dibersihkan atau diganti. Suhu, tekanan, dan kelembapan udara memengaruhi busur, sehingga kalibrasi busur perlu dilakukan jika kondisi kerja berubah jauh.</p>
+        <p class="tip"><strong>Perkiraan, bukan ukuran:</strong> angka <em>estimated loss</em> di layar splicer dihitung dari gambar. Redaman sesungguhnya tetap harus diukur dengan OTDR atau power meter.</p>
+      </section>
+
+      <section id="troubleshooting" class="m-sec">
+        <h2><span class="no">11</span>Sambungan bermasalah</h2>
+        <p>Jika redaman terlalu tinggi, jangan langsung mengulang fusion. Cari penyebabnya, lalu ulangi dari langkah cleave.</p>
+        <div class="scroll"><table>
+          <thead><tr><th>Yang terlihat</th><th>Kemungkinan penyebab</th><th>Tindakan</th></tr></thead>
+          <tbody>
+            <tr><td>Peringatan sudut potong terlalu besar</td><td>Cleaver kotor atau mata pisau aus</td><td>Bersihkan atau putar posisi mata pisau, lalu potong ulang</td></tr>
+            <tr><td>Gelembung atau rongga di sambungan</td><td>Ujung serat kotor atau cacat</td><td>Bersihkan, potong ulang, periksa daya busur</td></tr>
+            <tr><td>Sambungan menggelembung (menebal)</td><td>Overlap terlalu besar atau busur terlalu lama</td><td>Sesuaikan parameter busur dan overlap</td></tr>
+            <tr><td>Sambungan menyempit</td><td>Overlap kurang atau daya busur berlebih</td><td>Sesuaikan parameter, lakukan kalibrasi busur</td></tr>
+            <tr><td>Serat bergeser atau tidak lurus</td><td>V-groove atau penjepit kotor, serat tidak duduk rata</td><td>Bersihkan V-groove, letakkan serat ulang</td></tr>
+            <tr><td>Bintik atau debu di layar</td><td>Lensa atau serat kotor</td><td>Bersihkan lensa, bersihkan serat sebelum dikupas</td></tr>
+            <tr><td>Tampilan baik, tetapi redaman ukur tinggi</td><td>Dua serat berbeda jenis atau berbeda ukuran core</td><td>Pastikan jenis serat sama dan program splicer benar</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="keselamatan" class="m-sec">
+        <h2><span class="no">12</span>Keselamatan kerja</h2>
+        <ul class="aman">
+          <li><strong>Pelindung diri.</strong> Pakai kacamata dan sarung tangan.</li>
+          <li><strong>Limbah serat.</strong> Potongan kaca sangat tajam dan bisa menembus kulit atau mata. Kumpulkan dalam wadah tertutup, jangan dibuang ke lantai atau tempat sampah biasa.</li>
+          <li><strong>Mata.</strong> Jangan menatap ujung serat atau port OTDR yang aktif. Cahayanya inframerah, tidak terlihat, tetapi bisa merusak retina.</li>
+          <li><strong>Busur dan panas.</strong> Elektroda dan heater sangat panas. Jangan sentuh saat bekerja.</li>
+          <li><strong>Bahan mudah terbakar.</strong> IPA mudah menyala. Busur listrik bisa menyulut uap, jadi jangan menyambung di area yang ada gas atau uap mudah terbakar.</li>
+          <li><strong>Tikungan.</strong> Jangan menekuk serat atau kabel melebihi radius tikung yang diizinkan.</li>
+        </ul>
+      </section>
+
+      <section id="istilah" class="m-sec">
+        <h2><span class="no">13</span>Istilah penting</h2>
+        <dl class="istilah">
+          <dt>Core</dt><dd>Inti kaca tempat cahaya berjalan.</dd>
+          <dt>Cladding</dt><dd>Selubung kaca di sekeliling core yang membuat cahaya terkurung.</dd>
+          <dt>Coating</dt><dd>Lapisan plastik tipis yang melindungi kaca.</dd>
+          <dt>Cleave</dt><dd>Memotong serat sehingga ujungnya rata.</dd>
+          <dt>Splice</dt><dd>Sambungan dua serat.</dd>
+          <dt>Splice loss</dt><dd>Redaman yang timbul pada sambungan, dalam dB.</dd>
+          <dt>Indeks bias</dt><dd>Ukuran seberapa lambat cahaya merambat di suatu bahan.</dd>
+          <dt>OTDR</dt><dd>Alat yang mengirim pulsa cahaya dan membaca pantulannya untuk memetakan redaman sepanjang kabel.</dd>
+          <dt>Power meter</dt><dd>Alat pengukur daya cahaya di ujung serat, dipakai bersama sumber cahaya.</dd>
+          <dt>Sleeve</dt><dd>Selongsong penyusut panas pelindung sambungan.</dd>
+        </dl>
+      </section>
+
+      <section id="cek-pemahaman" class="m-sec">
+        <h2><span class="no">14</span>Cek pemahaman</h2>
+        <p>Jawab dulu dalam hati, lalu buka jawabannya.</p>
+        <div class="kuis">
+          <details><summary>Mengapa cahaya bisa terkurung di dalam core?</summary><p>Indeks bias core lebih tinggi daripada cladding. Cahaya yang menumbuk batas dengan sudut lebih besar dari sudut kritis dipantulkan sempurna, sehingga terus berjalan di dalam core.</p></details>
+          <details><summary>Daya cahaya turun dari 1 mW menjadi 0,5 mW. Berapa redamannya?</summary><p>Sekitar 3 dB, sebab 10 × log₁₀(1 ÷ 0,5) ≈ 3,01.</p></details>
+          <details><summary>Mengapa sleeve harus dipasang sebelum fusion?</summary><p>Setelah kedua serat tersambung, sleeve tidak bisa dimasukkan lagi dari ujung mana pun tanpa memotong sambungan.</p></details>
+          <details><summary>Apa dua penyebab paling umum redaman sambungan tinggi?</summary><p>Hasil cleave yang buruk (miring atau bergerigi) dan serat yang kotor atau tersentuh setelah dikupas.</p></details>
+          <details><summary>Mengapa ujung serat yang aktif tidak boleh ditatap?</summary><p>Cahayanya inframerah sehingga tidak terlihat, tetapi tetap bisa merusak retina tanpa disadari.</p></details>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <section class="final">
+    <div class="final-in">
+      <h2>Sudah paham? Coba menyambung serat sendiri.</h2>
+      <a class="btn lg" href="simulasi.html">Mulai simulasi</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="brand"><img src="img/logo/logo-mark.svg" width="40" height="40" alt=""><span><strong>OptiSplice Lab</strong><small>Simulator fusion splicing</small></span></div>
+    <nav aria-label="Footer"><a href="index.html">Beranda</a><a href="materi.html">Materi</a><a href="index.html#alat">Alat</a><a href="simulasi.html">Mulai simulasi</a></nav>
+    <small>© 2026 OptiSplice Lab</small>
+  </div>
+</footer>
+<script src="js/materi.js"></script>
+</body>
+</html>

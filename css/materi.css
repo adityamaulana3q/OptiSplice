@@ -1,0 +1,84 @@
+/* materi.css — khusus halaman materi (materi.html). Komponen bersama ada di situs.css. */
+.m-hero{max-width:1240px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(12px,2vw,24px) 8px}
+.m-hero h1{font-size:clamp(34px,5vw,60px);line-height:1.03;letter-spacing:-.03em;max-width:20ch;margin-bottom:16px}
+.lead{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:60ch;margin:0 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- tata letak: daftar isi + isi ---------- */
+.m-wrap{max-width:1240px;margin:0 auto;padding:28px clamp(12px,2vw,24px) 0;display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.toc{position:sticky;top:92px;max-height:calc(100vh - 110px);overflow:auto;padding:16px;background:var(--card-bg);border:1.5px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.toc p{margin:16px 0 6px;font:700 15px "Bricolage Grotesque",sans-serif;color:var(--ink)}
+.toc p:first-child{margin-top:0}
+.toc ol{margin:0;padding-left:30px}
+.toc li::marker{color:var(--muted);font-size:13px}
+.toc a{display:block;padding:5px 8px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:14.5px}
+.toc a:hover{background:var(--panel)}
+.toc a.on{background:var(--yellow);color:var(--on-yellow);font-weight:600}
+.m-body{min-width:0;max-width:820px}
+.m-sec>p{max-width:72ch}
+
+/* ---------- judul bagian & subbagian ---------- */
+.part{padding:22px 24px;border-radius:20px;border:3px solid var(--bench-deep);background:var(--mat);color:#fff;box-shadow:inset 0 0 80px rgba(0,0,0,.45)}
+.m-body>.part:not(:first-child){margin-top:64px}
+.part h2{margin:0 0 4px;font-size:clamp(24px,3vw,34px);color:#fff}
+.part p{margin:0;color:#D5E3DC}
+.m-sec{padding-top:36px;scroll-margin-top:92px}
+.m-sec h2{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:clamp(24px,2.8vw,32px);line-height:1.1;letter-spacing:-.02em}
+.no{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--yellow);color:#1B2320;border:2px solid #1B2320;font:700 17px "Bricolage Grotesque",sans-serif}
+.m-sec h3{margin:20px 0 6px;font-size:18px}
+.m-sec p,.m-sec li{font-size:17px;line-height:1.65}
+.m-sec p{margin:0 0 14px;color:var(--ink)}
+.m-sec ul,.m-sec ol.tahap{margin:0 0 16px;padding-left:22px}
+.m-sec li{margin-bottom:6px}
+
+/* ---------- kotak-kotak isi ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.duo>div{padding:14px 18px;border:1.5px solid var(--line);border-radius:16px;background:var(--card-bg)}
+.duo h3{margin-top:0}
+.duo ul{margin:0;padding-left:20px}
+.m-sec p.tip{padding:14px 18px;border:1.5px solid var(--line);border-left:8px solid var(--yellow);border-radius:14px;background:var(--card-bg)}
+.m-sec p.rumus{padding:14px 18px;border-radius:14px;background:#1B2320;color:var(--yellow);text-align:center;font:400 clamp(16px,2vw,20px)/1.4 "Share Tech Mono",ui-monospace,monospace}
+.diagram{margin:18px 0;padding:18px;border-radius:20px;border:3px solid var(--bench-deep);background:var(--mat);box-shadow:inset 0 0 70px rgba(0,0,0,.4)}
+.diagram svg{display:block;width:100%;max-width:560px;height:auto;margin:0 auto}
+.diagram figcaption{margin-top:10px;text-align:center;font-size:14px;color:#D5E3DC}
+pre.lcd{margin:14px 0 18px;padding:16px 18px;overflow-x:auto;border-radius:16px;color:#8CFFC0;border:1.5px solid #040D0A;background:repeating-linear-gradient(0deg,rgba(140,255,192,.06) 0 1px,transparent 1px 3px),radial-gradient(120% 100% at 50% 0%,#12382E,#0A1C17);box-shadow:inset 0 0 26px rgba(0,0,0,.65);font:400 clamp(13px,2.4vw,17px)/1.7 "Share Tech Mono",ui-monospace,monospace;text-shadow:0 0 12px rgba(140,255,192,.5)}
+
+/* ---------- tabel ---------- */
+.scroll{margin:14px 0 18px;overflow-x:auto;border:1.5px solid var(--line);border-radius:16px;background:var(--card-bg)}
+table{width:100%;min-width:520px;border-collapse:collapse;font-size:15.5px}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--ink);color:var(--bg);font:700 15px "Bricolage Grotesque",sans-serif}
+tbody th{font-weight:600;white-space:nowrap}
+tbody tr:last-child>*{border-bottom:0}
+
+/* ---------- daftar khusus ---------- */
+ul.alat{list-style:none;padding:0}
+ul.alat li{padding:10px 0;border-bottom:1px solid var(--line)}
+.m-sec .rail li{margin:0;padding-bottom:24px;line-height:normal}
+.m-sec .rail h3{margin:7px 0 2px;font-size:20px}
+.m-sec .rail p{margin:0;color:var(--muted)}
+.istilah{display:grid;grid-template-columns:minmax(110px,max-content) 1fr;margin:0;overflow:hidden;border:1.5px solid var(--line);border-radius:16px;background:var(--card-bg)}
+.istilah dt,.istilah dd{margin:0;padding:11px 16px;border-bottom:1px solid var(--line)}
+.istilah dt{font-weight:600}
+.istilah dt:last-of-type,.istilah dd:last-of-type{border-bottom:0}
+.kuis{display:grid;gap:10px}
+.kuis details{padding:0 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--card-bg)}
+.kuis details[open]{border-color:var(--ink)}
+.kuis summary{display:flex;justify-content:space-between;gap:10px;padding:14px 0;list-style:none;cursor:pointer;font-weight:600;font-size:17px}
+.kuis summary::-webkit-details-marker{display:none}
+.kuis summary::after{content:"+";font:700 22px/1 "Bricolage Grotesque",sans-serif;color:var(--muted)}
+.kuis details[open] summary::after{content:"−"}
+.kuis details p{margin:0 0 14px;color:var(--muted)}
+
+/* ---------- responsif ---------- */
+@media (max-width:980px){
+  .m-wrap{grid-template-columns:1fr}
+  .toc{position:static;max-height:none}
+  .toc ol{columns:2}
+}
+@media (max-width:640px){
+  .duo{grid-template-columns:1fr}
+  .toc ol{columns:1}
+  .istilah{grid-template-columns:1fr}
+  .istilah dt{padding-bottom:0;border-bottom:0}
+}
